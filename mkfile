@@ -1,14 +1,14 @@
 <config.mk
 
 
-results/%.alignments.txt.gz
-results/%.bps.txt.gz
-results/%.contigs.bam
-results/%.discordant.txt.gz
-results/%.log
-results/%.svaba.indel.vcf
-results/%.svaba.sv.vcf
-results/%.svaba.unfiltered.indel.vcf
+results/%.alignments.txt.gz \
+results/%.bps.txt.gz \
+results/%.contigs.bam \
+results/%.discordant.txt.gz \
+results/%.log \
+results/%.svaba.indel.vcf \
+results/%.svaba.sv.vcf \
+results/%.svaba.unfiltered.indel.vcf \
 results/%.svaba.unfiltered.sv.vcf:	data/%.bam
 	mkdir -p `dirname $target`
 	svaba run \
