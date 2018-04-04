@@ -12,12 +12,12 @@ results/%.svaba.unfiltered.indel.vcf \
 results/%.svaba.unfiltered.sv.vcf:	data/%.bam
 	mkdir -p `dirname $target`
 	svaba run \
-		--case-bam $prereq \
-		--threads $NT \
-		--mate-lookup-min $MR \
+		-t $prereq \
+		-p $NT \
+		-L $MR \
 		-I \
-		--id-string $stem".build" \
-		--reference-genome $REFERENCE \
+		-a "results/"$stem".build" \
+		-G $REFERENCE \
 	&& mv "results/"$stem".buld.alignments.txt.gz" "results/"$stem".alignments.txt.gz" \
 	&& mv "results/"$stem".buld.bps.txt.gz" "results/"$stem".bps.txt.gz" \
 	&& mv "results/"$stem".buld.contigs.bam" "results/"$stem".contigs.bam" \
